@@ -9,13 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb; 
 
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void FixedUpdate()   // unity prefers FixedUpate with forces
     {
@@ -42,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("space"))
         {
             rb.AddForce(0, jumpForce * Time.deltaTime, 0);
+        }
+
+        if (rb.position.y < -1f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
         }
 
     }
