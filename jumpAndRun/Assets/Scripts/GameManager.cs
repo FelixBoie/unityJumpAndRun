@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void CompleteLevel()
+    {
+        Debug.Log("Level Complete");
+        
+    }
+
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); //loads the current scene again. 
