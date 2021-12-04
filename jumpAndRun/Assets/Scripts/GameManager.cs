@@ -7,25 +7,33 @@ public class GameManager : MonoBehaviour
     bool gameHasEnded = false;
 
     public float restartDelay = 2f;
+
+    public GameObject completeLevelUI;
+
+    
+
+    public void CompleteLevel()
+    {
+        Debug.Log("Level Complete");
+        completeLevelUI.SetActive(true);
+        
+    }
+
     public void EndGame()
     {
-        if (gameHasEnded == false) 
+        if (gameHasEnded == false)
         {
             gameHasEnded = true;
             Debug.Log("Game Over.");
             Invoke("Restart", 2f);
         }
-        
-    }
 
-    public void CompleteLevel()
-    {
-        Debug.Log("Level Complete");
-        
     }
 
     void Restart()
     {
+        Debug.Log("R");
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); //loads the current scene again. 
     }
 }

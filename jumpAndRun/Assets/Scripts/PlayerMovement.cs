@@ -36,11 +36,13 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(0, jumpForce * Time.deltaTime, 0);
         }
-
+        
+        // important for falling off the platform
         if (rb.position.y < -1f)
         {
             FindObjectOfType<GameManager>().EndGame();
         }
+        
 
     }
 }
