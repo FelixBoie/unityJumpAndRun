@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class LevelComplet : MonoBehaviour
 {
@@ -7,7 +7,8 @@ public class LevelComplet : MonoBehaviour
     {
         Debug.Log("LoadNextLevel");
         // under File -> buidl settings you can find the scenes that are being loaded in Unity
-        EditorSceneManager.LoadScene(EditorSceneManager.GetActiveScene().buildIndex + 1);
+        // incorrect name space used!!
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
